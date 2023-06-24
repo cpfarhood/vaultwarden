@@ -3,7 +3,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   namespace: farhoodliquor-com
-  name: bitwarden-pvc
+  name: bitwarden-pv
 spec:
   storageClassName: longhorn
   accessModes:
