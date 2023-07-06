@@ -2,10 +2,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-   name: bitwarden
+   name: vaultwarden
    namespace: farhoodliquor-com
    labels:
-     app: bitwarden
+     app: vaultwarden
 spec:
   type: LoadBalancer
   ports:
@@ -13,40 +13,40 @@ spec:
     targetPort: 80
     name: http
   selector:
-    app: bitwarden
+    app: vaultwarden
 --- # service
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: bitwarden
+  name: vaultwarden
   namespace: farhoodliquor-com
 spec:
   selector:
     matchLabels:
-      app: bitwarden
-  serviceName: "bitwarden"
+      app: vaultwarden
+  serviceName: "vaultwarden"
   replicas: 1
   minReadySeconds: 10
   template:
     metadata:
       labels:
-        app: bitwarden
+        app: vaultwarden
     spec:
       terminationGracePeriodSeconds: 10
       containers:
-      - name: bitwarden
+      - name: vaultwarden
         image: docker.io/vaultwarden/server:latest
         ports:
         - containerPort: 80
           name: http
         volumeMounts:
-        - name: bitwarden-config
+        - name: vaultwarden-config
           mountPath: "/config"
         resources:
           requests:
             memory: "128Mi"
             cpu: "100m"
       volumes:
-      - name: bitwarden-config
+      - name: vaultwarden-config
         persistentVolumeClaim:
-          claimName: bitwarden-config
+          claimName: vaultwarden-config
