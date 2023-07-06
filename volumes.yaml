@@ -5,7 +5,7 @@ metadata:
   name: bitwarden-config
   labels:
     name: bitwarden-config
-  namespace: mediaserver
+  namespace: farhoodliquor-com
   annotations:
     kustomize.toolkit.fluxcd.io/prune: disabled
 spec:
