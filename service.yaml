@@ -14,39 +14,3 @@ spec:
     name: http
   selector:
     app: vaultwarden
---- # service
-apiVersion: apps/v1
-kind: StatefulSet
-metadata:
-  name: vaultwarden
-  namespace: farhoodliquor-com
-spec:
-  selector:
-    matchLabels:
-      app: vaultwarden
-  serviceName: "vaultwarden"
-  replicas: 1
-  minReadySeconds: 10
-  template:
-    metadata:
-      labels:
-        app: vaultwarden
-    spec:
-      terminationGracePeriodSeconds: 10
-      containers:
-      - name: vaultwarden
-        image: docker.io/vaultwarden/server:latest
-        ports:
-        - containerPort: 80
-          name: http
-        volumeMounts:
-        - name: vaultwarden-config
-          mountPath: "/config"
-        resources:
-          requests:
-            memory: "128Mi"
-            cpu: "100m"
-      volumes:
-      - name: vaultwarden-config
-        persistentVolumeClaim:
-          claimName: vaultwarden-config
