@@ -79,7 +79,7 @@ spec:
         - name: vaultwarden-config
           mountPath: "/config"
         - name: vaultwarden-temp
-          mountPath: "/tmp/old"
+          mountPath: "/mnt"
         resources:
           requests:
             memory: "128Mi"
