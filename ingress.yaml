@@ -5,7 +5,7 @@ metadata:
   namespace: farhoodliquor-com
 spec:
   rules:
-  - host: vault.farhoodliquor.com
+  - host: passwords.farhoodliquor.com
     http:
       paths:
       - path: /
