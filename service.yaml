@@ -78,6 +78,8 @@ spec:
         volumeMounts:
         - name: vaultwarden-config
           mountPath: "/config"
+        - name: vaultwarden-temp
+          mountPath: "/tmp/old"
         resources:
           requests:
             memory: "128Mi"
@@ -86,3 +88,13 @@ spec:
       - name: vaultwarden-config
         persistentVolumeClaim:
           claimName: vaultwarden-config
+  volumeClaimTemplates:
+  - metadata:
+      name: vaultwarden-temp
+    spec:
+      volumeName: vaultwarden-temp
+      accessModes: ["ReadWriteMany"]
+      storageClassName: nfs
+      resources:
+        requests:
+          storage: 1Gi
