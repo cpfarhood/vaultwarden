@@ -7,7 +7,9 @@ metadata:
    labels:
      app: vaultwarden
 spec:
-  type: LoadBalancer
+  clusterIP: None
+  #type: LoadBalancer
+  #externalTrafficPolicy: Local
   ports:
   - port: 80
     targetPort: 80
