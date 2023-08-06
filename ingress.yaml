@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: vaultwarden-ingress
   namespace: farhoodliquor-com
+  annotations:
+    traefik.ingress.kubernetes.io/router.middlewares: kube-system-redirect@kubernetescrd
 spec:
   rules:
   - host: passwords.farhoodliquor.com
