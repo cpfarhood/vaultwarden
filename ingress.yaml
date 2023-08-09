@@ -6,6 +6,7 @@ metadata:
   annotations:
     traefik.ingress.kubernetes.io/router.middlewares: kube-system-redirect@kubernetescrd
 spec:
+  ingressClassName: traefik-external
   rules:
   - host: passwords.farhoodliquor.com
     http:
