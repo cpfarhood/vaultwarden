@@ -4,7 +4,7 @@ metadata:
   name: vaultwarden-ingress
   namespace: farhoodliquor-com
   annotations:
-    traefik.ingress.kubernetes.io/router.middlewares: kube-system-redirect@kubernetescrd
+    traefik.ingress.kubernetes.io/router.middlewares: traefik-redirect@kubernetescrd
 spec:
   ingressClassName: traefik-external
   rules:
