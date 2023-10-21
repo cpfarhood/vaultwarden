@@ -36,6 +36,7 @@ spec:
       containers:
       - name: vaultwarden
         image: docker.io/vaultwarden/server:latest
+        imagePullPolicy: Always
         env:
         - name: SMTP_PORT
           valueFrom:
