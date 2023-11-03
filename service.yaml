@@ -79,6 +79,8 @@ spec:
         volumeMounts:
         - name: vaultwarden-config
           mountPath: "/data"
+        - name: temp
+          mountPath: "/temp"
         resources:
           requests:
             memory: "128Mi"
@@ -87,3 +89,7 @@ spec:
       - name: vaultwarden-config
         persistentVolumeClaim:
           claimName: vaultwarden-config
+      - name: temp
+        nfs:
+          server: spielberg.farhoodliquor.dmz
+          path: /mnt/pool0/backups/temp
