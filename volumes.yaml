@@ -5,13 +5,12 @@ metadata:
   name: vaultwarden-config
   labels:
     name: vaultwarden-config
-  namespace: farhoodliquor-com
-  annotations:
     kustomize.toolkit.fluxcd.io/prune: disabled
+  namespace: farhoodliquor-com
 spec:
   accessModes:
   - ReadWriteOnce
-  storageClassName: rook-ceph-block-nvme
+  storageClassName: longhorn-perpetual
   resources:
     requests:
       storage: 8Gi
