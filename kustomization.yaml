@@ -6,3 +6,6 @@ resources:
   - volumes.yaml
   - service.yaml
   - ingress.yaml
+  - statefulset.yaml
+  - secrets.yaml
+  - volumes.yaml
