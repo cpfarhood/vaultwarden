@@ -8,4 +8,4 @@ resources:
   - ingress.yaml
   - statefulset.yaml
   - secrets.yaml
-  - volumes.yaml
+#  - volumes.yaml # this was created outside of fluxcd
