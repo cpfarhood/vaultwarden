@@ -26,10 +26,10 @@ spec:
         - containerPort: 80
           name: http
         volumeMounts:
-        - name: vaultwarden-config
-          mountPath: "/data"
+#        - name: vaultwarden-config
+#          mountPath: "/data"
         - name: config
-          mountPath: "/config"
+          mountPath: "/data"
         securityContext:
           allowPrivilegeEscalation: false
         resources:
@@ -39,10 +39,10 @@ spec:
           limits:
             memory: "256Mi"
             cpu: "500m"
-      volumes:
-      - name: vaultwarden-config
-        persistentVolumeClaim:
-          claimName: vaultwarden-config
+#      volumes:
+#      - name: vaultwarden-config
+#        persistentVolumeClaim:
+#          claimName: vaultwarden-config
   volumeClaimTemplates:
   - metadata:
       name: config
