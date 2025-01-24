@@ -6,7 +6,6 @@ metadata:
   labels:
     name: vaultwarden-config
     kustomize.toolkit.fluxcd.io/prune: disabled
-  namespace: farhoodliquor-com
 spec:
   accessModes:
   - ReadWriteOnce

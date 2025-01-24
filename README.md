@@ -1,2 +1,2 @@
-# bitwarden
+# vaultwarden flux repo
 
