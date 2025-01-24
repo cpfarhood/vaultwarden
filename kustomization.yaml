@@ -6,5 +6,5 @@ resources:
   - service.yaml
   - ingress.yaml
   - statefulset.yaml
-  - secret-vaultwarden-env.yaml
+  - sealedsecret-vaultwarden-env.yaml
 #  - volumes.yaml # this was created outside of fluxcd
