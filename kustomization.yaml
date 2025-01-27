@@ -6,3 +6,4 @@ resources:
   - ingress.yaml
   - statefulset.yaml
   - sealedsecret-vaultwarden-env.yaml
+  - receiver-cpfarhood-vaultwarden.yaml
