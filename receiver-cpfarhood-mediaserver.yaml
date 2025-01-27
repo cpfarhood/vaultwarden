@@ -1,0 +1,17 @@
+# This is for the main flux-system git repository
+apiVersion: notification.toolkit.fluxcd.io/v1
+kind: Receiver
+metadata:
+  name: cpfarhood-vaultwarden
+  namespace: flux-system
+spec:
+  type: github
+  events:
+    - "ping"
+    - "push"
+  secretRef:
+    name: webhook-token
+  resources:
+    - kind: GitRepository
+      name: cpfarhood-vaultwarden
+      namespace: vaultwarden
