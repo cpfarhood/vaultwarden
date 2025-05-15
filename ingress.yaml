@@ -17,7 +17,6 @@ spec:
             name:  vaultwarden
             port:
               number: 80
-
   tls:
   - hosts:
     - passwords.farhoodliquor.com
