@@ -20,4 +20,4 @@ spec:
   tls:
   - hosts:
     - passwords.farhoodliquor.com
-    secretName: valutwarden-tls
+    secretName: valutwarden-ingress-tls
